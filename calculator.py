@@ -8,6 +8,8 @@ def multiplication(x, y):
     return x * y
 
 def division(x, y):
+    if y == 0:
+        return "Cannot divide by zero"
     return x / y
 
 print("\n====== SMART CALCULATOR ======")
@@ -19,20 +21,25 @@ print("4. Division")
 
 user_choice = input("Select operation: ")
 
-first_number = float(input("Enter first number: "))
-second_number = float(input("Enter second number: "))
+try:
 
-if user_choice == "1":
-    print("Result:", addition(first_number, second_number))
+    first_number = float(input("Enter first number: "))
+    second_number = float(input("Enter second number: "))
 
-elif user_choice == "2":
-    print("Result:", subtraction(first_number, second_number))
+    if user_choice == "1":
+        print("Result:", addition(first_number, second_number))
 
-elif user_choice == "3":
-    print("Result:", multiplication(first_number, second_number))
+    elif user_choice == "2":
+        print("Result:", subtraction(first_number, second_number))
 
-elif user_choice == "4":
-    print("Result:", division(first_number, second_number))
+    elif user_choice == "3":
+        print("Result:", multiplication(first_number, second_number))
 
-else:
-    print("Invalid Choice")
+    elif user_choice == "4":
+        print("Result:", division(first_number, second_number))
+
+    else:
+        print("Invalid Choice")
+
+except ValueError:
+    print("Please enter valid numbers")
