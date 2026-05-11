@@ -10,12 +10,29 @@ def multiplication(x, y):
 def division(x, y):
     return x / y
 
-print("Smart Calculator Started")
+print("\n====== SMART CALCULATOR ======")
+
+print("1. Addition")
+print("2. Subtraction")
+print("3. Multiplication")
+print("4. Division")
+
+user_choice = input("Select operation: ")
 
 first_number = float(input("Enter first number: "))
 second_number = float(input("Enter second number: "))
 
-print("Addition:", addition(first_number, second_number))
-print("Subtraction:", subtraction(first_number, second_number))
-print("Multiplication:", multiplication(first_number, second_number))
-print("Division:", division(first_number, second_number))
+if user_choice == "1":
+    print("Result:", addition(first_number, second_number))
+
+elif user_choice == "2":
+    print("Result:", subtraction(first_number, second_number))
+
+elif user_choice == "3":
+    print("Result:", multiplication(first_number, second_number))
+
+elif user_choice == "4":
+    print("Result:", division(first_number, second_number))
+
+else:
+    print("Invalid Choice")
